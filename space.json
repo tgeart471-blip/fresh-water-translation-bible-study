@@ -1,0 +1,8 @@
+{
+  "runtime": "typescript",
+  "platformVersion": 26,
+  "entry": "client/dist/index.html",
+  "name": "Fresh Water Translation Bible Study",
+  "slug": "fresh-water-translation-bible-study",
+  "managedCronJobs": []
+}

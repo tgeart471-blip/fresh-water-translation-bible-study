@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap');
+@import "tailwindcss";
+@import "tailwindcss-safe-area";
+
+@theme {
+  --text-xs: 12px;
+  --text-xs--line-height: 16px;
+  --text-sm: 14px;
+  --text-sm--line-height: 20px;
+  --text-base: 16px;
+  --text-base--line-height: 24px;
+  --text-lg: 18px;
+  --text-lg--line-height: 28px;
+  --text-xl: 20px;
+  --text-xl--line-height: 28px;
+  --text-2xl: 24px;
+  --text-2xl--line-height: 32px;
+  --text-3xl: 30px;
+  --text-3xl--line-height: 36px;
+  --text-4xl: 36px;
+  --text-4xl--line-height: 40px;
+  --text-5xl: 48px;
+  --text-5xl--line-height: 52px;
+  --font-scripture: "Source Serif 4", Georgia, "Times New Roman", serif;
+}
+
+:root {
+  color-scheme: light dark;
+  --bg: #faf7f0;
+  --surface: #ffffff;
+  --surface-alt: #f3eee1;
+  --text: #1e2422;
+  --dim: #68736e;
+  --border: #e3dcc9;
+  --accent: #0e4d4a;
+  --accent-soft: #e2efed;
+  --gold: #c9a227;
+  --radius: 12px;
+  --space-surface: var(--surface);
+  --space-surface-alt: var(--surface-alt);
+  --space-muted: var(--dim);
+  --space-border: var(--border);
+  --space-accent: var(--accent);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121614;
+    --surface: #1c211f;
+    --surface-alt: #232a27;
+    --text: #ece7da;
+    --dim: #9aa39c;
+    --border: #333b36;
+    --accent: #5fc4ba;
+    --accent-soft: #173633;
+    --gold: #d4af37;
+  }
+}
+
+.scripture {
+  font-family: var(--font-scripture);
+}
+.seg-blue { color: #1d4ed8; }
+@media (prefers-color-scheme: dark) {
+  .seg-blue { color: #7aa5f8; }
+}
+.seg-sc { font-variant: small-caps; letter-spacing: 0.01em; }
+.seg-sh {
+  background: #fff2cc;
+  border-radius: 3px;
+  padding: 0 1px;
+  box-shadow: inset 0 0 0 1px rgba(201, 162, 39, 0.25);
+}
+@media (prefers-color-scheme: dark) {
+  .seg-sh { background: rgba(201, 162, 39, 0.28); }
+}
+
+/* Verse navigation landing flash: pulses the target verse so the eye lands on it */
+@keyframes verse-flash-pulse {
+  0%, 100% { background-color: transparent; box-shadow: none; }
+  20%, 60% { background-color: rgba(201, 162, 39, 0.45); box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.45); }
+  40%, 80% { background-color: rgba(201, 162, 39, 0.18); box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.18); }
+}
+.verse-flash {
+  border-radius: 4px;
+  animation: verse-flash-pulse 2.6s ease-in-out 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .verse-flash {
+    animation: none;
+    background-color: rgba(201, 162, 39, 0.35);
+    box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.35);
+  }
+}
